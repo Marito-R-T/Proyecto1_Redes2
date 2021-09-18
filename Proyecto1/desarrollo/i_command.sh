@@ -8,8 +8,7 @@
 
 while read -r l
 do
-    readarray -d = -t MACS <<< $l
-    if [ $3 == $l ]; then MAC=${parametros[1]}; fi
+    if [ $3 == $l ]; then MAC=$l; fi
 done < ../archivos/macsiniciales.conf
 
 if [[ -n $MAC ]]; then
