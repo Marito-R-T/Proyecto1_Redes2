@@ -12,8 +12,9 @@
 #echo $MAC_3
 n='hola'
 f='hola'
-if [ $n==$f ]; then
-    echo 'igual'
-else
-    echo 'vacio'
+g='nada'
+if [ "$n" == "$f" ]; then
+    echo 'igual a f'
+elif [ $n == $g ]; then
+    echo 'igual a g'
 fi

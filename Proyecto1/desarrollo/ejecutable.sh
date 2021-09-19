@@ -29,9 +29,9 @@ echo 'Archivo de usuario_BW'
 while read -r l 
 do
     readarray -d , -t USUARIOBW <<< $l
+    echo ${USUARIOBW[0]}
     #ancho de bajada
     AB=${USUARIOBW[1]}
-    echo ${USUARIOBW[0]}
     #ancho de subida
     AS=${USUARIOBW[2]}
     BWT=$((ANCHO*(AB+AS)/100))
