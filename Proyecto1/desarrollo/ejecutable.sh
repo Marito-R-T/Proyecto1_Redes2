@@ -31,6 +31,7 @@ do
     readarray -d , -t USUARIOBW <<< $l
     #ancho de bajada
     AB=${USUARIOBW[1]}
+    echo ${USUARIOBW[0]}
     #ancho de subida
     AS=${USUARIOBW[2]}
     BWT=$((ANCHO*(AB+AS)/100))
