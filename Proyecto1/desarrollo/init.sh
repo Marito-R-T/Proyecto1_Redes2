@@ -9,7 +9,7 @@ then
     echo 'no está el comando iptables'
     exit
 fi
-if ! command -v contrab &> /dev/null
+if ! command -v crontab &> /dev/null
 then
     echo 'no está el comando contrab'
     exit
@@ -21,12 +21,12 @@ iptables -P FORWARD DROP
 iptables -P OUTPUT DROP
 
 #direcciones mac de clientes
-i = 0
+i=0
 while read -r linea
 do 
-    if [ i -eq 0 ]; then MAC_1=${linea}; fi
-    if [ i -eq 1 ]; then MAC_2=${linea}; fi
-    if [ i -eq 2 ]; then MAC_3=${linea}; fi
+    if [ $i -eq 0 ]; then MAC_1=${linea}; fi
+    if [ $i -eq 1 ]; then MAC_2=${linea}; fi
+    if [ $i -eq 2 ]; then MAC_3=${linea}; fi
     i=$((i+1))
 done < ../archivos/macsiniciales.conf
 
@@ -61,10 +61,10 @@ tc class add dev $INTERFAZ parent 1:1 classid 1:101 htb rate 1Kbit
 tc class add dev $INTERFAZ parent 1:1 classid 1:102 htb rate 1Kbit
 tc class add dev $INTERFAZ parent 1:1 classid 1:103 htb rate 1Kbit
 
-//
-filter_mac $MAC_1 1:101
-filter_mac $MAC_2 1:102
-filter_mac $MAC_3 1:103
+
+arreglo_mac $MAC_1 1:101
+arreglo_mac $MAC_2 1:102
+arreglo_mac $MAC_3 1:103
 
 echo ""
 echo "Saliendo de pagina init"
