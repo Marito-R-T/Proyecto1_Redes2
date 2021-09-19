@@ -6,7 +6,7 @@
 
 INTERFAZ=enp0s8
 #direcciones mac de clientes
-i = 0
+i=0
 while read -r l
 do 
     if [ $i -eq 0 ]; then MAC_1=${l}; fi
