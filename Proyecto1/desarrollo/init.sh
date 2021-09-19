@@ -54,9 +54,9 @@ arreglo_mac() {
 
 #Creamos los nodos hijos, que serían 3 usuarios (los usuarios centos)
 
-tc class add dev $INTERFAZ parent 1:1 classid 1:101 htb rate 0Mbit
-tc class add dev $INTERFAZ parent 1:1 classid 1:102 htb rate 0Mbit
-tc class add dev $INTERFAZ parent 1:1 classid 1:103 htb rate 0Mbit
+tc class add dev $INTERFAZ parent 1:1 classid 1:101 htb rate 1Kbit
+tc class add dev $INTERFAZ parent 1:1 classid 1:102 htb rate 1Kbit
+tc class add dev $INTERFAZ parent 1:1 classid 1:103 htb rate 1Kbit
 
 //
 filter_mac $MAC_1 1:101

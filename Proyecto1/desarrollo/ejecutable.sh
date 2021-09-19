@@ -37,7 +37,7 @@ do
     readarray -d : -t H_INICIO <<< ${USUARIOBW[3]}
     readarray -d : -t H_FIN <<< ${USUARIOBW[4]}
     bash ./i_crontab.sh ${H_INICIO[1]} ${H_INICIO[0]} $BWT $CADENA ${USUARIOBW[0]} 
-    bash ./i_crontab.sh ${H_FIN[1]} ${H_FIN[0]} 0 $CADENA ${USUARIOBW[0]}
+    bash ./i_crontab.sh ${H_FIN[1]} ${H_FIN[0]} 1 $CADENA ${USUARIOBW[0]}
 done < ../archivos/usuario_BW.conf
 echo
 echo
