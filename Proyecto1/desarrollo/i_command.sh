@@ -8,7 +8,7 @@
 
 while read -r l
 do
-    if [ $3 == $l ]; then MAC=$l; fi
+    if [ $3==$l ]; then MAC=$l; fi
 done < ../archivos/macsiniciales.conf
 
 if [[ -n $MAC ]]; then

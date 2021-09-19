@@ -15,12 +15,12 @@ do
     i=$((i+1))
 done < ../archivos/macsiniciales.conf
 
-if [ $5 == $MAC_1 ]; then
+if [ $5==$MAC_1 ]; then
     echo "$1 $2 * * * /sbin/tc class change dev $INTERFAZ parent 1:1 classid 1:101 htb rate ${3}Kbit $4" >> /var/spool/cron/crontabs/root
 fi
-if [ $5 == $MAC_2 ]; then
+if [ $5==$MAC_2 ]; then
     echo "$1 $2 * * * /sbin/tc class change dev $INTERFAZ parent 1:1 classid 1:102 htb rate ${3}Kbit $4" >> /var/spool/cron/crontabs/root
 fi
-if [ $5 == $MAC_3 ]; then
+if [ $5==$MAC_3 ]; then
     echo "$1 $2 * * * /sbin/tc class change dev $INTERFAZ parent 1:1 classid 1:103 htb rate ${3}Kbit $4" >> /var/spool/cron/crontabs/root
 fi

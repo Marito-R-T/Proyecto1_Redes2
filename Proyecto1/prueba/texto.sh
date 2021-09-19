@@ -10,10 +10,10 @@
 #echo $MAC_1
 #echo $MAC_2
 #echo $MAC_3
-
-echo $numero
-if [[ -n $numero ]]; then
-    echo $numero
+n='hola'
+f='hola'
+if [ $n==$f ]; then
+    echo 'igual'
 else
     echo 'vacio'
 fi
