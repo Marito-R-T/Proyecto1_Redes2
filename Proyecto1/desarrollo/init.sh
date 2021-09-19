@@ -1,13 +1,16 @@
 #Verificación
-if ! command -v tc &> /dev/null then
+if ! command -v tc &> /dev/null 
+then
     echo 'no está el comando tc'
     exit
 fi
-if ! command -v iptables &> /dev/null then
+if ! command -v iptables &> /dev/null 
+then
     echo 'no está el comando iptables'
     exit
 fi
-if ! command -v contrab &> /dev/null then
+if ! command -v contrab &> /dev/null
+then
     echo 'no está el comando contrab'
     exit
 fi
