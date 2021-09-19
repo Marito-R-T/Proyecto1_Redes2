@@ -17,12 +17,12 @@ done < ../archivos/macsiniciales.conf
 
 if [ $3 == $MAC_1 ]; then
     echo $MAC_1
-    echo "echo '/sbin/tc class change dev $INTERFAZ parent 1:1 classid 1:101 htb rate ${2}Kbit $4' | at $1" >> ../reglas/reglas.sh
+    echo "echo '/sbin/tc class change dev $INTERFAZ parent 1:1 classid 1:101 htb rate ${2}Kbit $4' | at $1" >> /home/marito/Documentos/Proyecto1_Redes2/Proyecto1/reglas/reglas.sh
 elif [ $3 == $MAC_2 ]; then
     echo $MAC_2
-    echo "echo '/sbin/tc class change dev $INTERFAZ parent 1:1 classid 1:102 htb rate ${2}Kbit $4' | at $1" >> ../reglas/reglas.sh
+    echo "echo '/sbin/tc class change dev $INTERFAZ parent 1:1 classid 1:102 htb rate ${2}Kbit $4' | at $1" >> /home/marito/Documentos/Proyecto1_Redes2/Proyecto1/reglas/reglas.sh
 elif [ $3 == $MAC_3 ]; then
     echo $MAC_3
-    echo "echo '/sbin/tc class change dev $INTERFAZ parent 1:1 classid 1:103 htb rate ${2}Kbit $4' | at $1" >> ../reglas/reglas.sh
+    echo "echo '/sbin/tc class change dev $INTERFAZ parent 1:1 classid 1:103 htb rate ${2}Kbit $4' | at $1" >> /home/marito/Documentos/Proyecto1_Redes2/Proyecto1/reglas/reglas.sh
 fi
 echo 

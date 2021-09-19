@@ -40,8 +40,8 @@ do
     bash i_crontab.sh ${USUARIOBW[3]} $BWT ${USUARIOBW[0]} $CADENA
     bash i_crontab.sh ${USUARIOBW[4]} 1 ${USUARIOBW[0]}
 done < ../archivos/usuario_BW.conf
-echo "echo 'sh ../reglas/reglas.sh' | at now + 1 days" >> ../reglas/reglas.sh
-sh ../reglas/reglas.sh
+echo "echo 'sh ../reglas/reglas.sh' | at now + 1 days" >> /home/marito/Documentos/Proyecto1_Redes2/Proyecto1/reglas/reglas.sh
+sh /home/marito/Documentos/Proyecto1_Redes2/Proyecto1/reglas/reglas.sh
 
 echo
 echo
