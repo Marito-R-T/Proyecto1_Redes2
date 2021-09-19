@@ -55,7 +55,7 @@ do
       if [ ${#PUERTOS[@]} -eq 2 ]; then
         bash i_command.sh 1 ${USUARIOPROTO[1]} ${USUARIOPROTO[0]} ${USUARIOPROTO[3]} ${USUARIOPROTO[4]} ${PUERTOS[0]} ${PUERTOS[1]}
       else 
-        bash i_command.sh 1 ${USUARIOPROTO[1]} ${USUARIOPROTO[0]} ${USUARIOPROTO[3]} ${USUARIOPROTO[4]} ${USUARIOPROTO[2]}
+        bash i_command.sh 2 ${USUARIOPROTO[1]} ${USUARIOPROTO[0]} ${USUARIOPROTO[3]} ${USUARIOPROTO[4]} ${USUARIOPROTO[2]}
       fi
     fi
 done < ../archivos/usuario_PROTO.conf
