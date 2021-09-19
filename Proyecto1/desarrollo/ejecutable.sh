@@ -36,8 +36,8 @@ do
     BWT=$((ANCHO*(AB+AS)/100))
     readarray -d : -t H_INICIO <<< ${USUARIOBW[3]}
     readarray -d : -t H_FIN <<< ${USUARIOBW[4]}
-    bash ../i_crontab.sh ${H_INICIO[1]} ${H_INICIO[0]} $BWT $CADENA ${USUARIOBW[0]} 
-    bash ../i_crontab.sh ${H_FIN[1]} ${H_FIN[0]} 1 $CADENA ${USUARIOBW[0]}
+    bash i_crontab.sh ${H_INICIO[1]} ${H_INICIO[0]} $BWT $CADENA ${USUARIOBW[0]} 
+    bash i_crontab.sh ${H_FIN[1]} ${H_FIN[0]} 1 $CADENA ${USUARIOBW[0]}
 done < ../archivos/usuario_BW.conf
 echo
 echo
@@ -47,15 +47,15 @@ while read -r l
 do
     readarray -d , -t USUARIOPROTO <<< $l
     if [ ${#USUARIOPROTO[@]} -eq 4 ]; then #parametros: mac,protocolo,horainicio,horafin
-      bash ./i_command.sh 0 icmp ${USUARIOPROTO[0]} ${USUARIOPROTO[2]} ${USUARIOPROTO[3]}
+      bash i_command.sh 0 icmp ${USUARIOPROTO[0]} ${USUARIOPROTO[2]} ${USUARIOPROTO[3]}
     fi
 
     if [ ${#USUARIOPROTO[@]} -eq 5 ]; then #parametros: mac,protocolo,puerto(s),horainicio,horafin
       readarray -d : -t PUERTOS <<< "${parametros[2]}"
       if [ ${#PUERTOS[@]} -eq 2 ]; then
-        bash ../i_command.sh 1 ${USUARIOPROTO[1]} ${USUARIOPROTO[0]} ${USUARIOPROTO[3]} ${USUARIOPROTO[4]} ${PUERTOS[0]} ${PUERTOS[1]}
+        bash i_command.sh 1 ${USUARIOPROTO[1]} ${USUARIOPROTO[0]} ${USUARIOPROTO[3]} ${USUARIOPROTO[4]} ${PUERTOS[0]} ${PUERTOS[1]}
       else 
-        bash ../i_command.sh 1 ${USUARIOPROTO[1]} ${USUARIOPROTO[0]} ${USUARIOPROTO[3]} ${USUARIOPROTO[4]} ${USUARIOPROTO[2]}
+        bash i_command.sh 1 ${USUARIOPROTO[1]} ${USUARIOPROTO[0]} ${USUARIOPROTO[3]} ${USUARIOPROTO[4]} ${USUARIOPROTO[2]}
       fi
     fi
 done < ../archivos/usuario_PROTO.conf
