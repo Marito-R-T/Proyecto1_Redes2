@@ -1,20 +1,10 @@
-#!/bin/bash
-#i=0
-#while read -r linea
-#do
-#    if [ $linea = '20:20:20:20:20:20' ]; then MAC_1=${linea}; fi
-#    if [ $i -eq 1 ]; then MAC_2=${linea}; fi
-#    if [ $i -eq 2 ]; then MAC_3=${linea}; fi
-#    i=$((i+1))
-#done < t.txt
-#echo $MAC_1
-#echo $MAC_2
-#echo $MAC_3
-n='hola'
-f='hola'
-g='nada'
-if [ "$n" == "$f" ]; then
-    echo 'igual a f'
-elif [ $n == $g ]; then
-    echo 'igual a g'
-fi
+AB=40
+AS=40
+ANCHOB=4
+ANCHOS=3
+ANCHO=$(((ANCHOB+ANCHOS)*1024))
+echo $ANCHO
+BWT=$((((ANCHOB*AB)+(ANCHOS*AS))*1024/100))
+BTT=$(((ANCHO*(AB+AS))/100))
+echo $BWT
+echo $BTT

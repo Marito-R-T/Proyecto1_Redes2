@@ -34,7 +34,8 @@ do
     AB=${USUARIOBW[1]}
     #ancho de subida
     AS=${USUARIOBW[2]}
-    BWT=$((ANCHO*(AB+AS)/100))
+    BWT=$((((ANCHOB*AB)+(ANCHOS*AS))*1024/100))
+    #BWT=$((ANCHO*(AB+AS)/100))
     #readarray -d : -t H_INICIO <<< ${USUARIOBW[3]}
     #readarray -d : -t H_FIN <<< ${USUARIOBW[4]}
     bash i_at.sh ${USUARIOBW[3]} $BWT ${USUARIOBW[0]} $CADENA
