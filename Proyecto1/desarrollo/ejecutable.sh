@@ -24,7 +24,7 @@ echo "El modo de configuración es ${MODOF}"
 echo
 echo
 
-if [ $MODOF -eq 2 ]; then CADENA="ceil ${ANCHO}Kbit"; fi
+if [ $MODOF -eq 0 ]; then CADENA="ceil ${ANCHO}Kbit"; fi
 echo 'Archivo de usuario_BW'
 while read -r l 
 do
